@@ -19,7 +19,16 @@
 
         <?php
 
+            if (isset($_POST["insertOrders"])) {
+
             invioInserimentoFattura($conn);
+            try {
+                echo "<script src=\"./js/ajax.js\"></script>";
+            } 
+            catch (\Throwable $th) {
+            }
+
+            }
             
         ?>
 

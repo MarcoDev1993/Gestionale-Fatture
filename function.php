@@ -12,7 +12,6 @@ function getCodeArticles(){
    
 }
 
-
 function getArticles($conn){
     $sql = "SELECT desart FROM articoli";
     $result = $conn->query($sql);
@@ -23,9 +22,6 @@ function getArticles($conn){
     } 
     
 }
-
-
-
 
 function getClienti(){
     $conn = mysqli_connect("localhost", "root", "", "TEST");
@@ -39,11 +35,6 @@ function getClienti(){
       }
     } 
 }
-
-
-
-
-
 
 function getNumeroFatture($conn){
   $sql = "SELECT FAT_NUM FROM fattura_m";
@@ -166,31 +157,32 @@ function invioInserimentoFattura($conn){
 function getFormOrders($conn){
   if (isset($_POST['insertOrders'])) {
     $ordine = $_POST['numOrdini'];
+    echo "<div id='contenitoreForm'>";
     for ($i=1; $i < $ordine+1; $i++) {
+        
         echo "<div id='" . $i . "'>
-        <form action='inserimento.php' method='POST'>
+        <form  method='POST'>                  
         <fieldset> 
         <legend>
             Ordine" . $i . "
         </legend>  
             <label for='select_desc'>Descrizione Articolo</label>
-                <select name='select_desc[]' id=". $i . ">";
+                <select class='select_desc' name='select_desc[]' id=". $i . ">";
                     echo '<option></option>';  
                     getArticles($conn);
                 echo "</select>
                 <br>
             <label for='qtaArt'>Unità di misura</label>
-                <input type='number' name='qtaArt[]' > <br>
+                <input class='qtaArt' type='number' name='qtaArt[]' > <br>
         </fieldset></div>";
-
     }
-    echo "<input type='submit' name='insertFattura' value='Inserisci ordini' />";
+    echo "<input type='button' name='insertFattura' id='insertFattura' value='Inserisci ordini' />";
+    echo "</div>";
+    //echo "<input type='submit' name='insertFattura' value='Inserisci ordini' />";             // per passaggio dati senza ajax mettere al form action=inserimento.php
     echo "</form>";
     }
 }
-
 // funzioni richiamate in inserimento.php
-
 function getNumFattura(){
   $conn = new mysqli("localhost", "root", "", "TEST");
     $sql_FATNUM = "SELECT COUNT(FAT_NUM) AS numeroFattura FROM fattura_m ";
