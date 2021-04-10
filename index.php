@@ -10,19 +10,16 @@ include "./conn/conn.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maschere per inserimento Fatture</title>
+    <link rel="stylesheet" href="./css/navigation.css">
+    <link rel="stylesheet" href="./css/style.css">
+
 
 </head>
 <body>
-    
-    <?php include "insertClienti.php"; ?>
+
+<?php include "navigation.php" ?>
 
 
-    <?php include "insertArticoli.php"; ?>
-
-
-    <?php include "insertFatture.php"; ?>
-
-
-
+<script src="./js/effect.js"></script>
 </body>
 </html>

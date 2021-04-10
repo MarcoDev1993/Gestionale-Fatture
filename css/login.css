@@ -1,0 +1,19 @@
+#login{
+    width: auto;
+    height: auto;
+    
+}
+
+#login-form{
+    width: 25%;
+    height: 25%;
+    margin: 0 auto;
+}
+
+#loginBtn{
+    width: 271px;
+    height: 52px;
+    background-color: white;
+    border: 0.2px solid black;
+    font-size: 17px;
+}

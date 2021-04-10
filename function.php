@@ -1,6 +1,7 @@
 <?php
 
-function getCodeArticles(){
+
+function getCodeArticles($conn){
     $conn = mysqli_connect("localhost", "root", "", "TEST");
     $sql = "SELECT codart FROM articoli";
     $result = $conn->query($sql);
@@ -9,8 +10,8 @@ function getCodeArticles(){
         echo "<option value='" . $row['codart'] . "'>" . $row['codart'] ."</option>";
       }
     } 
-   
 }
+
 
 function getArticles($conn){
     $sql = "SELECT desart FROM articoli";
@@ -47,16 +48,14 @@ function getNumeroFatture($conn){
 }
 
 
-
 // VISUALIZZAZIONE DATI FATTURE
-
 function stampaTBody($conn){
   if (isset($_POST['numFattura'])) {
     $numRighe = getRigheFattura($conn, $_POST['numFattura']);
     $dati = getDatiRigheFattura($conn, $_POST['numFattura']);               
     $datiFatturaM = getDatiRigheFatturaM($conn, $_POST['numFattura']);
     $datiFatturaM = explode(',' , $datiFatturaM[0]);
-    print_r($datiFatturaM);
+    echo "<table border='1'><tbody><thead><tr><th>Codice articolo</th><th>Descrizione articolo</th><th>Quantità</th><th>Prezzo</th><th>Iva 22%</th><th>Importo</th></tr></thead>";    
     for ($i=0; $i < $numRighe; $i++) { 
         $datiRIGA = explode(',', $dati[$i]);
         echo 
@@ -70,28 +69,8 @@ function stampaTBody($conn){
         </tr>";
     }
     echo 
-    "<tr>
-        <td>
-        
-        </td>
-        <td>
-        
-        </td>
-        <td>
-        
-        </td>
-        <td>".
-        $datiFatturaM[3]    // tot imponibile
-        ."</td>
-        <td> " . 
-        $datiFatturaM[4]  // totale iva
-        ."
-        </td>
-        <td> " . 
-        $datiFatturaM[5]  // totale importo
-        ."
-        </td>
-    </tr>";
+    "<tr><td></td><td></td><td></td><td>".$datiFatturaM[3]."</td><td> ".$datiFatturaM[4]."</td><td> ".$datiFatturaM[5]."</td></tr>";
+    echo "</tbody></table>"; 
 }
 }
 
@@ -140,9 +119,7 @@ function getDatiRigheFatturaM($conn, $numFattura){
 }
 
 
-
 //INSERIMENTO FATTURE
-
 // funzioni richiamate in insertFatture.php
 function invioInserimentoFattura($conn){
   if (isset($_POST["insertOrders"])) {
@@ -159,7 +136,6 @@ function getFormOrders($conn){
     $ordine = $_POST['numOrdini'];
     echo "<div id='contenitoreForm'>";
     for ($i=1; $i < $ordine+1; $i++) {
-        
         echo "<div id='" . $i . "'>
         <form  method='POST'>                  
         <fieldset> 
@@ -211,7 +187,6 @@ function getPrezzo($descArt){
       $prezzo = $row["prezzo"];
   }
   return $prezzo;
-  
 }
 
 
