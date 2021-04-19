@@ -9,7 +9,7 @@ if (isset($_POST["clienti"])) {
 ?>
 
         <table class="contenitoreSezionitab" >
-        <form action="index.php?page=clienteNav" method="POST">
+        <form action="areaRiservata.php?page=clienteNav" method="POST">
 
         <tr><td style="height:52px">Inserimento clienti</td></tr>
         <tr>
@@ -40,10 +40,10 @@ if (isset($_POST["clienti"])) {
         <td><input class="inputField" type="text" name="codpag" placeholder="Codice pagamento"></td>
         </tr>
         <tr>
-        <td><input type="submit" name="clienti" value="invia" id="inviaClienti"></td>
+        <td><input type="submit" name="clienti" value="Registra Cliente" class="inviaModulo"></td>
         </tr>
         </form>
         </table>
    
 
-    <br><br><br>
+    <?php include "footer.php"; ?>

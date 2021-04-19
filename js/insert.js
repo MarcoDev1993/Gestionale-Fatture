@@ -19,7 +19,6 @@ function inserimentoDatiFattura(){
         }
         descArr = descArr.trim().split(' ');
         qtArr = qtArr.trim().split(' ');
-        console.log(descArr, qtArr);
         //chiamata ajax
         let insertFatturaRequest = new XMLHttpRequest();
         insertFatturaRequest.onreadystatechange = function() {
@@ -27,7 +26,6 @@ function inserimentoDatiFattura(){
                 document.getElementById("contenitoreForm").innerHTML = this.responseText;
 
             }else{
-                console.log(this.onerror);
             }
           };
           insertFatturaRequest.open("POST", "inserimentoAjax.php", true);

@@ -3,23 +3,24 @@ include "function.php";
 include "./conn/conn.php";
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maschere per inserimento Fatture</title>
-    <link rel="stylesheet" href="./css/navigation.css">
-    <link rel="stylesheet" href="./css/style.css">
+<?php include "head.php" ?>
 
-
-</head>
 <body>
 
-<?php include "navigation.php" ?>
+<?php include "header.php" ?>
 
 
-<script src="./js/effect.js"></script>
-</body>
-</html>
+
+<?php 
+    if(!isset($_SESSION['id'])){
+        header('Location: login.php'); 
+    }else{
+        header('Location: areaRiservata.php'); 
+    }
+    
+    
+?>
+
+
+
+

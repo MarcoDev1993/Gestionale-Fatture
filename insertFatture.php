@@ -2,7 +2,7 @@
 
 <div>   
         <table class="contenitoreSezionitab">
-        <form action="index.php?page=fattureNav" method="POST">
+        <form action="areaRiservata.php?page=fattureNav" method="POST">
             <tr><td colspan=2>Inserimento Fatture</td></tr>
             <tr>
                
@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <td colspan=2>
-                    <input type='submit' name='insertOrders' value='Registra fattura' id="registra">
+                    <input type='submit' name='insertOrders' value='Registra fattura' id="registra" class='inviaModulo'>
                 </td>
             </tr>
         </form>
@@ -33,18 +33,16 @@
         <?php
 
             if (isset($_POST["insertOrders"])) {
-
             invioInserimentoFattura($conn);
             try {
                 echo "<script src=\"./js/insert.js\"></script>";
             } 
             catch (\Throwable $th) {
             }
-
             }
             
         ?>
 
 </div>
 
-
+<?php include "footer.php"; ?>

@@ -2,9 +2,7 @@
 
 <div id="nav">
     <div id="ancoreMenu">
-    <a class="nav" href="?page=homeNav">
-        Home
-    </a>
+    
     <a class="nav" href="?page=fattureNav">
         Inserisci Fatture
     </a>
@@ -18,16 +16,18 @@
         Articoli
     </a>
     </div>
+
+    
 </div>
 
 <div id="contenitoreSezioni">
 <?php 
     if (!isset($_GET['page'])) {
-        //include "index.php";
+        include "footer.php";
     } else {
     switch ($_GET['page']) {
         case "homeNav":
-             //include "index.php";
+             include "footer.php";
         break;
         case "fattureNav":
              include "insertFatture.php";

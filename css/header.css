@@ -8,4 +8,11 @@ div#header{
     font-weight: bolder;
     color: azure;
     line-height: 75px;
+    margin-bottom: 0;
+}
+
+#header a{
+    text-decoration: none;
+    color: inherit; 
+
 }

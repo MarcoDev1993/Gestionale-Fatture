@@ -6,38 +6,32 @@
     margin: 0 auto;
 }
 
-.contenitoreSezionitab td{
+.contenitoreSezionitab thead td{
     text-align: center;
     line-height: 0px;
-    width: 485px;
+    width: 40%;
 }
+
+.contenitoreSezionitab tbody td{
+    text-align: center;
+    line-height: 0px;
+    width: 15%;
+}
+
 
 .contenitoreSezionitab .inputField{
     width: 50%;
     padding: 14px 16px;
     font-size: 17px;
-
 }
 
 
 
-.contenitoreSezionitab #registra{
+.contenitoreSezionitab .inviaModulo{
     width: 521px;
-    height: 100%;
+    height: 50px;
     background-color: white;
     border: 0.2px solid black;
     font-size: 17px;
 }
 
-
-#form{
-    margin: 0 auto;
-}
-
-#inviaClienti{
-    width: 521px;
-    height: 100%;
-    background-color: white;
-    border: 0.2px solid black;
-    font-size: 17px;
-}

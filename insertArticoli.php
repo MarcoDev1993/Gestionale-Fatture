@@ -9,24 +9,32 @@ if (isset($_POST["articoli"])) {
 
 ?>
 
-<form action="index.php" method="POST">
-        Inserimento articoli <br>
-
-        codice articolo
-        <input type="text" name="codice_articolo"> <br>
-        descrizione articolo 
-        <input type="text" name="desc_art"><br>
-        unita di misura articolo
-        <input type="text" name="umiart"> <br>
-        prezzo 
-        <input type="decimal" name="prezzo"><br>
-        aliquota iva
-        <input type="text" name="aliva"> <br>
-       
-
-        <input type="submit" name="articoli" value="invia">
-
-    </form>
 
 
-    <br><br><br>
+    <table class="contenitoreSezionitab" >
+        <form action="areaRiservata.php?page=articoliNav" method="POST">
+
+        <tr><td style="height:52px">Inserimento articoli</td></tr>
+        <tr>
+        <td><input class="inputField" type="text" name="codice_articolo" placeholder="codice articolo"></td>
+        </tr>
+        <tr>
+        <td><input class="inputField" type="text" name="desc_art" placeholder="descrizione articolo"></td>
+        </tr>
+        <tr>
+        <td><input class="inputField" type="text" name="umiart" placeholder="Unita di misura articolo"> </td>
+        </tr>
+        <tr>
+        <td><input class="inputField" type="text" name="prezzo" placeholder="prezzo"></td>
+        </tr>
+        <tr>
+        <td><input class="inputField" type="text" name="aliva" placeholder="aliquota iva"></td>
+        </tr>
+        <tr>
+        <td><input type="submit" name="articoli" value="Registra Articolo" class="inviaModulo"></td>
+        </tr>
+        </form>
+        </table>
+
+
+    <?php include "footer.php"; ?>

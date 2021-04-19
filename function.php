@@ -55,7 +55,7 @@ function stampaTBody($conn){
     $dati = getDatiRigheFattura($conn, $_POST['numFattura']);               
     $datiFatturaM = getDatiRigheFatturaM($conn, $_POST['numFattura']);
     $datiFatturaM = explode(',' , $datiFatturaM[0]);
-    echo "<table border='1'><tbody><thead><tr><th>Codice articolo</th><th>Descrizione articolo</th><th>Quantità</th><th>Prezzo</th><th>Iva 22%</th><th>Importo</th></tr></thead>";    
+    echo "<table class='contenitoreSezionitab'><thead><tr><th>Codice articolo</th><th>Descrizione articolo</th><th>Quantità</th><th>Prezzo</th><th>Iva 22%</th><th>Importo</th></tr></thead><tbody>";    
     for ($i=0; $i < $numRighe; $i++) { 
         $datiRIGA = explode(',', $dati[$i]);
         echo 
@@ -123,7 +123,7 @@ function getDatiRigheFatturaM($conn, $numFattura){
 // funzioni richiamate in insertFatture.php
 function invioInserimentoFattura($conn){
   if (isset($_POST["insertOrders"])) {
-    session_start();
+    //session_start();
     $_SESSION['codcli'] = $_POST["codcli"];
     $_SESSION["dataOrdine"] = $_POST["dataOrdine"];
     $_SESSION["codPag"] = $_POST["codPag"];
